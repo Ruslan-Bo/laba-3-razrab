@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        var t = prompt("Ваша английская строка");
+        var english = ["a", "e", "i", "o", "u"];
+        var p = [];
+        p = t.split(" ");
+        var check1 = false;
+        var check2 = false;
+
+        var mas = [];
+        var mascount = 0;
+
+        for(var i = 0; i < p.length; i++){
+            var text = p[i];
+            for(var z = 0; z < english.length; z++){ // нахождение гласных в начале
+                if(text[0] == english[z]) {check1 = true; break;} 
+            }
+            for(var x = 0; x < english.length; x++){ // нахождение гласных в конце
+                if(text[text.length-1] == english[x]) {check2 = true; break;} 
+            }
+
+            if(check1 == true && check2 == true){
+                mas[mascount] = p[i];
+                mascount++;
+                check1 = false;
+                check1 = false;
+            }
+        }
+
+        alert("Все английские слова которые кончаются и начинаются на гласные - " + mas);
+    </script>
+</body>
+</html>
